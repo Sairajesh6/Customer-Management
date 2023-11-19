@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<style>
+		h5 {
+			display: inline-block;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="CustomerList">
+		<div class="newempbutton">
+			<a th:href="@{/NewCustomerForm}"><button> Add Customer </button></a>
+			<h5>Customer List</h5>
+		</div>
+		<div class="tab">
+			<table border="1">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th> Address</th>
+						<th> City</th>
+						<th> State</th>
+						<th> Email</th>
+						<th> Phone</th>
+						<th> Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="customer: ${listcustomer}">
+						<td th:text="${customer.id}"></td>
+						<td th:text="${customer.FirstName}"></td>
+						<td th:text="${customer.LastName}"></td>
+						<td th:text="${customer.Adress}"></td>
+						<td th:text="${customer.City}"></td>
+						<td th:text="${customer.State}"></td>
+						<td th:text="${customer.Email}"></td>
+						<td th:text="${customer.Phone}"></td>
+
+
+						<td>
+							<a th:href="@{/deleteEmployee/{cusid}(cusid=${customer.id})}">
+								<button class="update-red">Delete</button>
+							</a>
+							<a th:href="@{/showFormForUpdate/{cusid}(cusid=${customer.id})}">
+								<button>Edit</button>
+							</a>
+
+						</td>
+					</tr>
+				</tbody>
+
+			</table>
+
+
+
+		</div>
+</body>
+
+</html>
