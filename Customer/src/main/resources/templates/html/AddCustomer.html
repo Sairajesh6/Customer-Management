@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="save">
+        <h2>Customer Details</h2>
+
+        <form action="#" th:action="@{/saveCustomer}" th:object="${customer}" method="POST" >
+			<div class="save-box">
+				<span>
+            <input type="text" th:field="*{firstName}" placeholder=" First Name" ><br><br>
+            <input type="text" th:field="*{LastName}" placeholder="Last Name" ><br><br>
+            <input type="text" th:field="*{Adress}"placeholder="Address"><br><br>
+            <input type="text" th:field="*{City}"placeholder="City"><br><br>
+            <input type="text" th:field="*{State}"placeholder="State"><br><br>
+            <input type="text" th:field="*{Email}"placeholder="Email"><br><br>
+            <input type="text" th:field="*{Phone}" placeholder="Phone"></span><br><br>
+
+          <div class="savesubmit"><button type="submit" style="background-color: cornflowerblue;"> Submit</button></div><br>
+          </div>
+          
+        </form>
+</div>
+</body>
+</html>
